@@ -13,16 +13,6 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    
-    if message.content.lower().startswith('$roll a '):
-        msgContent = message.content[8:]
-        await message.channel.send(max(roll(msgContent, True), roll(msgContent, True)))
-        return
-    
-    if message.content.lower().startswith('$roll d '):
-        msgContent = message.content[8:]
-        await message.channel.send(min(roll(msgContent, True), roll(msgContent, True)))
-        return
 
     if message.content.lower().startswith('$roll '):
         msgContent = message.content[6:]
